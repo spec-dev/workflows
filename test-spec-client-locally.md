@@ -73,7 +73,7 @@ psql testing -f ../helpers/create-blocks-table.sql
 
 ### 8) Add the Ethereum Blocks live object to your project
 
-The Spec desktop app will also automatically write your project.toml file for you, but lets just write it from scratch. Replace your `.spec/project.toml` file with the following contents:
+The Spec desktop app will also automatically write your project.toml file for you, but let's just write it from scratch. Replace your `.spec/project.toml` file with the following contents:
 
 ```toml
 # = Live Objects (Sources) ------------------------------
@@ -114,7 +114,7 @@ filterBy = [
 ]
 ```
 
-This file tells the Spec client 3 things:<br>
+This file tells the Spec client 4 things:<br>
 1) That your database needs data from the `eth.Block@0.0.1` Live Object
 2) The exact 1:1 mapping between an `eth.Block` record and your `blocks` table
 3) `uniqueBy` - The group of columns to use within the `ON CONFLICT(...)` clause when upserting an `eth.Block` record into the `blocks` table.
