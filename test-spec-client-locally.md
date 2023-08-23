@@ -59,8 +59,8 @@ Open `.spec/connect` and configure the rest of the local database connection inf
 name = 'testing'
 port = 5432
 host = 'localhost'
-user = 'your-db-owner'
-password = ''
+user = 'your-username' # whatever shows up to the left when you just type 'psql' and hit enter
+password = '' # leave blank
 ```
 
 ### 7) Create the table that will hold live ethereum blocks data
