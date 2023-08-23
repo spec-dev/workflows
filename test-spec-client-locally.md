@@ -110,7 +110,7 @@ transaction_count = 'Block.transactionCount'
 table = 'public.blocks'
 uniqueBy = [ 'number' ]
 filterBy = [
-	{ number = { op = '>', value = '17325000' } },
+	{ number = { op = '>', value = '17978800' } },
 ]
 ```
 
