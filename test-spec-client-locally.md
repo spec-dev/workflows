@@ -1,4 +1,4 @@
-# Test the Spec Client Locally
+# Running the Spec Client Locally
 
 The following workflow will show you how to run the Spec client locally against your local Postgres database + how to add your first live table and see Spec in action.
 
@@ -118,7 +118,7 @@ This file tells the Spec client 4 things:<br>
 1) That your database needs data from the `eth.Block@0.0.1` Live Object
 2) The exact 1:1 mapping between an `eth.Block` record and your `blocks` table
 3) `uniqueBy` - The group of columns to use within the `ON CONFLICT(...)` clause when upserting an `eth.Block` record into the `blocks` table.
-4) `filterBy` - Which subset of `eth.Block` Live Object records you want (all blocks where `number > 18100000`). This is used up-front when performing the initial backfill of the live table (HTTP request to the Tables API `/stream`), and then on an on-going basis to filter new events coming from the event-relay.
+4) `filterBy` - Which subset of `eth.Block` Live Object records you want (all blocks where `number > 18100000`). This is used up-front when performing the initial backfill of the live table (HTTP request to the Tables API `/stream`), and then on an on-going basis to filter the incoming events from our event network that keep your table up-to-date.
 
 ### Run the Spec client
 
