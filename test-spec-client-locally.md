@@ -59,8 +59,8 @@ Open `.spec/connect` and configure the rest of the local database connection inf
 name = 'testing'
 port = 5432
 host = 'localhost'
-user = 'your-db-owner' # whatever shows up when you type "psql"
-password = ''
+user = 'your-username' # whatever shows up to the left when you just type 'psql' and hit enter
+password = '' # leave blank
 ```
 
 ### 7) Create the table that will hold live ethereum blocks data
@@ -110,7 +110,11 @@ transaction_count = 'Block.transactionCount'
 table = 'public.blocks'
 uniqueBy = [ 'number' ]
 filterBy = [
+<<<<<<< HEAD
 	{ number = { op = '>', value = '18100000' } },
+=======
+	{ number = { op = '>', value = '17978800' } },
+>>>>>>> 01e27c3665cb468f22a0a300455a1bdf10c17a07
 ]
 ```
 
