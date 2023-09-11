@@ -41,9 +41,9 @@ This will create 2 files inside a new `.spec` folder:
 1) `connect.toml` - Specifies the different database environments to run the Spec client against
 2) `project.toml` - Specifies which live tables you want in your database and their respective data mappings
 
-### 5) Link the remote Spec project to this local folder
+### 5) Set the location for your Spec project
 
-I went ahead and created a new Spec project named `test` that exists under the `test` namespace in our Core DB. This project (like all of them) has its own set of API credentials. When you run the following command, the Spec CLI will automatically pull down those API credentials for you. It then tells the CLI that this folder (`client-test`, or `.`) is the local location of the `test/test` project.
+For this tutorial, you can just use the `test/test` project on Spec. This project (like all of them) has its own set of API credentials. When you run the following command, the Spec CLI will automatically pull down those API credentials for you. It then tells the CLI that this folder (`client-test`, or `.`) is the local location for the `test/test` project.
 
 ```bash
 $ spec link project test/test .
