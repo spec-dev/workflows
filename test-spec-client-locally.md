@@ -65,7 +65,7 @@ password = '' # leave blank
 
 ### 7) Create the table that will hold live ethereum blocks data
 
-For this example, we're going to assume you want a live table in your database that holds all ethereum blocks published after block number `17325000`. If you were using the Spec desktop app, Spec would automatically create the underlying table *for you*, but without the desktop app, we will create the underlying table manually:
+For this example, we're going to assume you want a live table in your database that holds all ethereum blocks published after block number `18100000`. If you were using the Spec desktop app, Spec would automatically create the underlying table *for you*, but without the desktop app, we will create the underlying table manually:
 
 ```bash
 psql testing -f ../helpers/create-blocks-table.sql
@@ -110,11 +110,7 @@ transaction_count = 'Block.transactionCount'
 table = 'public.blocks'
 uniqueBy = [ 'number' ]
 filterBy = [
-<<<<<<< HEAD
 	{ number = { op = '>', value = '18100000' } },
-=======
-	{ number = { op = '>', value = '17978800' } },
->>>>>>> 01e27c3665cb468f22a0a300455a1bdf10c17a07
 ]
 ```
 
@@ -122,7 +118,7 @@ This file tells the Spec client 4 things:<br>
 1) That your database needs data from the `eth.Block@0.0.1` Live Object
 2) The exact 1:1 mapping between an `eth.Block` record and your `blocks` table
 3) `uniqueBy` - The group of columns to use within the `ON CONFLICT(...)` clause when upserting an `eth.Block` record into the `blocks` table.
-4) `filterBy` - Which subset of `eth.Block` Live Object records you want (all blocks where `number > 17325000`). This is used up-front when performing the initial backfill of the live table (HTTP request to the Tables API `/stream`), and then on an on-going basis to filter new events coming from the event-relay.
+4) `filterBy` - Which subset of `eth.Block` Live Object records you want (all blocks where `number > 18100000`). This is used up-front when performing the initial backfill of the live table (HTTP request to the Tables API `/stream`), and then on an on-going basis to filter new events coming from the event-relay.
 
 ### Run the Spec client
 
